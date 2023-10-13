@@ -20,12 +20,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar+ bvn"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">Gestion des employés </a>
+                <a class="navbar-brand" href="{{ url('/') }}">Gestion des Mangas </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-target">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/listerEmploye') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Lister</a></li>
-                    <li><a href="{{ url('/ajouterEmploye') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Ajouter </a></li>
+                    <li><a href="{{ url('/Lister') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Lister</a></li>
+                    <li><a href="{{ url('/') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Ajouter </a></li>
                 </ul>
             </div>
         </div><!--/.container-fluid -->

@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('layouts/master');});
+
+Route::get('/Lister', [\App\Http\Controllers\MangasController:: class,'listerEmployes']);
