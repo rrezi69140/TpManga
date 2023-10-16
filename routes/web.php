@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {return view('layouts/master');});
 
 Route::get('/Lister', [\App\Http\Controllers\MangasController:: class,'listerEmployes']);
+
+Route::get('/AjouterMangas', [\App\Http\Controllers\MangasController:: class,'FormAjouterMangas']);
+
+
+
+

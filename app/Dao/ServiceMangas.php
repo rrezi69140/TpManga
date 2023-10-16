@@ -25,4 +25,20 @@ class ServiceMangas
         }
 
     }
+
+    public function ajoutMangas($IdDessinateur, $IdScenariste, $Pix, $Titre, $Couverture, $IdGenre)
+    {
+        try {
+            DB::table('manga')->insert(
+                ['id_dessinateur' => $IdDessinateur,
+                    'id_scenariste' => $IdScenariste,
+                    'prix' => $Pix,
+                    'titre' => $Titre,
+                    'couverture' => $Couverture,
+                    'id_genre ' => $IdGenre
+                ]);
+        } catch (ILLuminate\Database\QueryException $e) {
+            throw new MonException($e->getMessage(), code: 5);
+        }
+    }
 }
