@@ -35,7 +35,7 @@ class ServiceMangas
                     'prix' => $Pix,
                     'titre' => $Titre,
                     'couverture' => $Couverture,
-                    'id_genre ' => $IdGenre
+                    'id_genre' => $IdGenre
                 ]);
         } catch (ILLuminate\Database\QueryException $e) {
             throw new MonException($e->getMessage(), code: 5);

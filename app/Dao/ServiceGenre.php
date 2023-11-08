@@ -10,9 +10,8 @@ class ServiceGenre
     public function GetListeGenre()
     {
         try {
-            $MesGenres = DB::table('manga')
+            $MesGenres = DB::table('genre')
                 ->Select()
-                ->where()
                 ->get();
             return $MesGenres;
         } catch (Illuminate\Database\QueryException $e) {

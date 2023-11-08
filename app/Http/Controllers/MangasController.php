@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Dao\ServiceDessinateur;
-use App\dao\ServiceEmploye;
 use App\Dao\ServiceGenre;
 use App\Dao\ServiceMangas;
 use App\Dao\ServiceScenariste;
 use App\Exceptions\MonException;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
+
+
 
 class MangasController extends Controller
 {
@@ -49,15 +50,15 @@ class MangasController extends Controller
     {
         try {
 
+            $IdDessinateur = Request::input('Dessinateur');
+            $IdScenariste = Request::input('Scenariste');
+            $Pix = Request::input('Prix');
+            $Titre = Request::input('Titre');
+            $Couverture = Request::file('Couverture');
+            $imageName = $Couverture->getClientOriginalName();
+            $Couverture = Request::file('Couverture')->move(public_path().'/assets/images/',$imageName);
 
-
-
-            $IdDessinateur = \Illuminate\Support\Facades\Request::input('IdDessinateur');
-            $IdScenariste = Request::input('IdScenariste');
-            $Pix = Request::input('Pix');
-            $Titre = Request::input('$itre');
-            $Couverture = Request::input('Couverture');
-            $IdGenre = Request::input('IdGenre');
+            $IdGenre = Request::input('Genre');
 
 
             $UnMangas = new ServiceMangas();

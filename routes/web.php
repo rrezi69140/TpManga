@@ -19,6 +19,8 @@ Route::get('/Lister', [\App\Http\Controllers\MangasController:: class,'listerEmp
 
 Route::get('/AjouterMangas', [\App\Http\Controllers\MangasController:: class,'FormAjouterMangas']);
 
+Route::post('/postAjouterManga',[\App\Http\Controllers\MangasController::class,'PostAjouterMangas']);
+
 
 
 

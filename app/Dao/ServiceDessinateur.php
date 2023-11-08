@@ -12,7 +12,6 @@ class ServiceDessinateur
         try {
             $MesDessinateur = DB::table('Dessinateur')
                 ->Select()
-                ->where()
                 ->get();
             return $MesDessinateur;
         } catch (Illuminate\Database\QueryException $e) {
@@ -21,3 +20,5 @@ class ServiceDessinateur
 
     }
 }
+
+

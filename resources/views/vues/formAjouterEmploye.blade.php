@@ -1,56 +1,60 @@
 @extends ('layouts.master')
 @section ('content')
-    {!! Form::open(['url' => 'postAjouterEmploye']) !!}
+    {!! Form::open(['url' => 'postAjouterManga']) !!}
     <div class="col-md-12 col-sm-12 well well-md">
-        <center><h1>AjouterEmployer</h1></center>
+        <center><h1>Ajouter un mangas </h1></center>
         <div class="form-horizontal">
             <div class="form-group">
-                <label class="col-md-3 col-sm-3 control-label">Civilité : </label>
+                <label class="col-md-3 col-sm-3 control-label">Dessinateur : </label>
                 <div class="col-md-2 col-sm-2">
-                    <p>
-                        <input type="radio" name="civilite" value="MmE"/> Madame
-                        <input type="radio" name="civilite" value="Mlle"/> Mademoiselle
-                        <input type="radio" name="civilite" value="Mr"/> Monsieur
-                    </p>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 col-sm-3 control-label">Nom : </label>
-                <div class="col-md-2 col-sm-2 ">
-                    <input type= "text"  name="nom" value="" class="form-control" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 col-am-3 control-label">Prenom : </label>
-                <div class="col-md-2 col-sm-1">
-                    <input type="text" name="prenom" value="" class="form-control" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 col-sm-3 control-label">Mot de passe: </label>
-                <div class ="col-md-3 col-sm-2">
-                <input type="password" name="passe" value="" class="form-control" required>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-3 col-sm-3 control-label">Profil: </label>
-            <div class="col-md-2 col-sm-2">
-                <p>Vous êtes <br/>
-                    <select name="profil">
-                        <option value="parti">Un particulier</option>
-                        <option value="profe" selected="selected">Un professionnel</option>
-                        <option value="insti">Un institutionnel</option>
+                    <select id="Dessinateur" name="Dessinateur">
+                        @foreach($ListeDessinateur As $UnDessianteur)
+                            <option value="{{$UnDessianteur->id_dessinateur}}">{{$UnDessianteur->nom_dessinateur}}</option>
+                        @endforeach
                     </select>
-                </p>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-3 col-sm-3 control-label">Quel type de prestation recherchez-vous ?</label>
-                <div class="col-md-2 col--2">
-                    <p>
-                        <input type="checkbox" name="interes" value="loc"/> Location de mobilier
-                        <input type="checkbox" name="interet" value="achat"/> Achat de mobilier
-                    </p>
+            <div class="form-group">
+                <label class="col-md-3 col-sm-3 control-label">Scenariste : </label>
+                <div class="col-md-2 col-sm-2">
+                    <select name="Scenariste" id = "Scenariste">
+                        @foreach($ListeScenariste As $UnScenariste)
+                            <option value="{{$UnScenariste->id_scenariste}}">{{$UnScenariste->nom_scenariste}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-sm-3 control-label">Genre : </label>
+                <div class="col-md-2 col-sm-2">
+                    <select name="Genre" id="Genre">
+                        @foreach($ListeGenre As $UnGenre)
+                            <option value="{{$UnGenre->id_genre}}">{{$UnGenre->lib_genre}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 control-label">Prix </label>
+                    <div class ="col-md-3 col-sm-2">
+                        <input type="text" name="Prix" value="" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 col-sm-3 control-label">Titre : </label>
+                    <div class ="col-md-3 col-sm-2">
+                        <input type="text" name="Titre" value="" class="form-control" required>
+                    </div>
+                </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-sm-3 control-label">Titre </label>
+                <div class ="col-md-3 col-sm-2">
+                    <input type="file"   name="Couverture">
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 

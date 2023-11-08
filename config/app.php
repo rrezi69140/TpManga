@@ -98,6 +98,8 @@ return [
 
     'fallback_locale' => 'en',
 
+    'Input' => Illuminate\Support\Facades\Request::class,
+
     /*
     |--------------------------------------------------------------------------
     | Faker Locale

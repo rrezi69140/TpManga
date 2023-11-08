@@ -12,7 +12,6 @@ class ServiceScenariste
         try {
             $MesScenariste = DB::table('Scenariste')
                 ->Select()
-                ->where()
                 ->get();
             return $MesScenariste;
         } catch (Illuminate\Database\QueryException $e) {
