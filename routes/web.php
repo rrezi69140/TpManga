@@ -21,6 +21,11 @@ Route::get('/AjouterMangas', [\App\Http\Controllers\MangasController:: class,'Fo
 
 Route::post('/postAjouterManga',[\App\Http\Controllers\MangasController::class,'PostAjouterMangas']);
 
+Route::get('/ModifierMangas/{id_manga}', [\App\Http\Controllers\MangasController::class, 'Modifier']);
+
+Route::post('/PostModifierMangas/{id}', array( 'uses' => '\App\Http\Controllers\MangasController@PostModifierMangas', 'as' => 'PostModifierMangas', )
+);
+
 
 
 

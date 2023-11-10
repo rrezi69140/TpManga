@@ -41,4 +41,23 @@ class ServiceMangas
             throw new MonException($e->getMessage(), code: 5);
         }
     }
+    public function getManga($id)
+    {
+        try {
+            $UnMangas = DB:: table('manga')->select()->where('id_manga', '=', $id)->first();
+            return $UnMangas;
+        } catch (Illuminate\Database\QueryException $e) {
+            throw new MonException ($e->getMessage(), 5);
+        }
+    }
+        public function modificationManga ($IdDessinateur, $IdScenariste, $Pix, $Titre, $Couverture, $IdGenre,$code ){
+        try {
+            DB::table('manga')
+                ->where('id_manga', $code)
+                ->update(['id_dessinateur' => $IdDessinateur, 'id_scenariste' => $IdScenariste, 'prix' => $Pix, 'titre'=> $Titre, 'couverture' => $Couverture, 'id_genre' => $IdGenre]);
+        } catch (Illuminate\Database\QueryException $e) {
+            throw new MonException ($e->getMessage(),5);
+        }
+    }
+
 }

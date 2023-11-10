@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label class="col-md-3 col-sm-3 control-label">Titre </label>
                 <div class ="col-md-3 col-sm-2">
-                    <input type="file"   name="Couverture">
+                    <input type="file"   name="Couverture" id="Couverture" >
                 </div>
             </div>
             </div>

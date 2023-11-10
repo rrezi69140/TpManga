@@ -26,6 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/Lister') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Lister</a></li>
                     <li><a href="{{ url('/AjouterMangas') }}" data-toggle="collapse" datatarget=".navbar-collapse.in">Ajouter </a></li>
+
                 </ul>
             </div>
         </div><!--/.container-fluid -->
